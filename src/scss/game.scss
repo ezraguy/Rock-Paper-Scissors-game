@@ -7,9 +7,6 @@
     height: 500px;
     width: 600px;
     
-    
-
-   
 
     .background-shape{
         margin-top: 60px;
@@ -18,8 +15,6 @@
     }
 
     
-    
-
     .circle-wrap-simple{
         
         z-index: 3;
@@ -161,13 +156,9 @@
 @media screen and (max-width: 600px) {
 
 
-    .background-shape{
-       margin-top: 120px !important;
-        position: absolute;
-        z-index: 0;
-        width: 250px;
-    }
+    
     .game{
+       
         
        width: 100%;
         
@@ -183,7 +174,7 @@
                 background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
                 background-color: blue;
                 position: absolute;
-                top: 180px;
+                top: 130px;
                 right:90px;
                  
     
@@ -193,7 +184,7 @@
                 background-color: red;
                 position: absolute ;
                 margin: 0 !important;
-                bottom:100px;
+                bottom:150px;
                 right: 30px;
                 
     
@@ -201,7 +192,8 @@
             &:nth-of-type(3){
                 background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
                 position: absolute;
-                top: 70px;
+                top: 30px;
+                right: -27px;
                 background-color: yellow;
     
             }
@@ -209,7 +201,7 @@
                 background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
                 background-color: purple;
                 position: absolute;
-                top: 190px;
+                top: 130px;
                 left:  80px;
     
             }
@@ -217,7 +209,7 @@
                 background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
                 background-color: turquoise;
                 position: absolute;
-                bottom:120px;
+                bottom:170px;
                 left: 50px;
     
             }
@@ -241,7 +233,7 @@
                 background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
                 background-color: blue;
                 margin-right: 100px;
-                margin-top: 80px;
+                margin-top:20px;
                 
     
             }
@@ -249,19 +241,26 @@
                 background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
                 background-color: red;
                 position: absolute;
-                margin-top: 260px;
+                margin-top: 210px;
                 
     
             }
             &:nth-of-type(3){
                 background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
                 background-color: yellow;
-                margin-top: 80px;
+                margin-top: 20px;
             }
 
 
             
         }
+        .background-shape{
+            
+             position: absolute;
+             align-self: auto;
+             z-index: 0;
+             width: 250px;
+         }
     }
     
   }

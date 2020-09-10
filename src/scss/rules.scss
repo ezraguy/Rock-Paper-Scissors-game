@@ -1,0 +1,50 @@
+.rules-modal{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    color: hsl(229, 25%, 31%);
+
+
+    .top-modal{
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        .modal-title{
+            font-size: 20pt;   
+            margin-left: 10px;
+            text-transform: uppercase;
+            margin-right: auto;
+            padding-left: 30px;
+        }
+    
+        .close-btn{
+           background:none ;
+           border: none;
+           padding-right: 30px;
+           color: gray;
+           font-family: inherit;
+
+           &:focus{
+               border: none;
+               outline: none !important;
+           }
+
+           svg{
+               cursor: pointer;
+               fill: gray;
+               padding-top: 5px;
+           }
+        }
+    }
+    
+
+    .rules-image{
+     align-self: center;
+     
+        width: 70%;
+    }
+
+    
+
+}

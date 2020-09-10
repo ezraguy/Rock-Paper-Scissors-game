@@ -12,9 +12,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        
         background-color: transparent;
-        border: 1.5px rgb(184, 183, 183) solid;
+        border: 1px rgb(184, 183, 183) solid;
         border-radius: 10px;
         width: 600px;
         margin-right: 20px;
@@ -60,5 +59,38 @@
                 }
           
         }
+    }
+    .rules-button{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 80px;
+        background:transparent;
+        color: white;
+        border-radius: 7px;
+       text-transform: uppercase;
+       font-family: inherit;
+        height: 30px;
+    }
+    // rules modal
+    .rules{
+        min-width: 25%;
+        width: 350px;
+        background-color: #fff;
+        height: 440px;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 100;
+    }
+    .overlay{
+        background:rgba(0, 0, 0, 0.584);
+        position: absolute;
+        width:100%;
+        height: 100vh;
     }
 }

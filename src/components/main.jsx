@@ -5,18 +5,39 @@ import GameSection from './game-section';
 
 const Main = () => {
     const [showRules, setShowRules] = useState(false);
+    const [proMode, setProMode] = useState(false);
 
     const showModal = () => {
         setShowRules(!showRules)
     }
+    const handleProMode = () => {
+        setProMode(!proMode);
+    }
     return (
 
         <div className="main">
+            <button className="set-pro-mode" onClick={handleProMode}>pro</button>
+
             <div className="score-board">
                 <div className="title">
-                    <span>rock</span>
-                    <span>paper</span>
-                    <span>scissors</span>
+                    {proMode ?
+                        <React.Fragment>
+                            <span>rock</span>
+                            <span>paper</span>
+                            <span>scissors</span>
+                            <span>lizard</span>
+                            <span>spock</span>
+                        </React.Fragment>
+
+                        : <React.Fragment>
+                            <span>rock</span>
+                            <span>paper</span>
+                            <span>scissors</span>
+
+
+                        </React.Fragment>
+                    }
+
                 </div>
                 <div className="score">
                     <span>Score</span>
@@ -24,7 +45,7 @@ const Main = () => {
                 </div>
             </div>
             <div className="game-section">
-                <GameSection />
+                <GameSection proMode={proMode} />
             </div>
             <button className="rules-button" onClick={showModal}>rules</button>
             {/* rules */}

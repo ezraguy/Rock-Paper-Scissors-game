@@ -9,12 +9,12 @@ import triangle from '../images/bg-triangle.svg';
 import pentagon from '../images/bg-pentagon.svg';
 const GameSection = ({ proMode }) => {
 
-    const [SimpleMoves, setSimpleMoves] = useState([
+    const [SimpleMoves] = useState([
         { id: 1, name: 'paper', comp: paper },
         { id: 2, name: 'rock', comp: rock },
         { id: 3, name: 'scissors', comp: scissors }]);
 
-    const [proMoves, setProMoves] = useState([
+    const [proMoves,] = useState([
         { id: 1, name: 'paper', comp: paper },
         { id: 2, name: 'rock', comp: rock },
         { id: 3, name: 'scissors', comp: scissors },

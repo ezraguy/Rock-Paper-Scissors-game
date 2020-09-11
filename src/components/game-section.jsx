@@ -12,16 +12,16 @@ import _, { set } from 'lodash';
 const GameSection = ({ proMode, handleWin }) => {
 
     const [SimpleMoves] = useState([
-        { id: 1, name: 'paper', comp: paper },
-        { id: 2, name: 'rock', comp: rock },
-        { id: 3, name: 'scissors', comp: scissors }]);
+        { id: 1, name: 'paper', comp: paper, circleClass: "paper-circle circle-wrap-simple " },
+        { id: 2, name: 'rock', comp: rock, circleClass: "rock-circle circle-wrap-simple " },
+        { id: 3, name: 'scissors', comp: scissors, circleClass: "scissors-circle circle-wrap-simple " }]);
 
     const [proMoves,] = useState([
-        { id: 1, name: 'paper', comp: paper },
-        { id: 2, name: 'rock', comp: rock },
-        { id: 3, name: 'scissors', comp: scissors },
-        { id: 4, name: 'lizard', comp: lizard },
-        { id: 5, name: 'spock', comp: spock },
+        { id: 1, name: 'paper', comp: paper, circleClass: "paper-circle-pro circle-wrap-pro " },
+        { id: 2, name: 'rock', comp: rock, circleClass: "rock-circle-pro circle-wrap-pro " },
+        { id: 3, name: 'scissors', comp: scissors, circleClass: "scissors-circle-pro circle-wrap-pro " },
+        { id: 4, name: 'lizard', comp: lizard, circleClass: "lizard-circle-pro circle-wrap-pro " },
+        { id: 5, name: 'spock', comp: spock, circleClass: "spock-circle-pro circle-wrap-pro " },
 
     ]);
 
@@ -87,7 +87,7 @@ const GameSection = ({ proMode, handleWin }) => {
                     {!proMode && SimpleMoves.map((move) => {
                         return (
                             <React.Fragment key={move.id}>
-                                <div className='circle-wrap-simple' onClick={() => handleMove(move.id)}>
+                                <div className={move.circleClass} onClick={() => handleMove(move.id)}>
                                     <div className="circle">
                                         <img src={move.comp} alt="move" />
                                     </div>
@@ -99,7 +99,7 @@ const GameSection = ({ proMode, handleWin }) => {
                     {proMode && proMoves.map((move) => {
                         return (
                             <React.Fragment key={move.id} >
-                                <div className='circle-wrap-pro' onClick={() => handleMove(move.id)}>
+                                <div className={move.circleClass} onClick={() => handleMove(move.id)}>
                                     <div className="circle">
                                         <img src={move.comp} alt="move" />
                                     </div>
@@ -118,7 +118,7 @@ const GameSection = ({ proMode, handleWin }) => {
             {isGameStarted &&
                 <React.Fragment>
                     <div className="result">
-                        <div className='circle-wrap-simple' >
+                        <div className={userMove.circleClass} >
                             <div className="circle">
                                 <img src={userMove.comp} alt="move" />
                             </div>
@@ -127,10 +127,12 @@ const GameSection = ({ proMode, handleWin }) => {
                             <p className="message">{message}</p>
                             <button className="play-again" onClick={() => setIsGameStarted(false)}>Play again</button>
                         </div>
-                        <div className='circle-wrap-simple' >
+                        <div className={botMove.circleClass} >
                             <div className="circle">
+
                                 <img src={botMove.comp} alt="move" />
                             </div>
+
                         </div>
                     </div>
                 </React.Fragment>

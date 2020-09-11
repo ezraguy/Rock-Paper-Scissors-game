@@ -47,7 +47,7 @@
 .rock-circle-pro{
     @extend .rock-circle;
     position: absolute ;
-    margin: 0 !important;
+    margin: 0;
     bottom:50px;
     right: 90px;
 }
@@ -195,17 +195,17 @@
  
 
 .result{
-   transition: ease 2s ;
+    transition: ease 2s ;
     display: flex;
     align-items: center;
     position: relative;
     height: 500px;
-   width: 600px;
+    width: 600px;
     justify-content: space-between;
 
 
     .user-result{
-       margin: 0;
+       margin: 0 ;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -232,8 +232,6 @@
         .message{
             text-align: center;
             font-size: 30pt;
-            margin-left: 20px;
-            margin-right: 20px;
             margin: 0;
         }
         
@@ -252,13 +250,13 @@
     .circle-wrap-simple{
         @extend .circle-wrap-simple;
         display: flex;
-        position: relative !important;
-        margin:0!important;
+        position: relative ;
+        margin:0;
         
         
 
         .circle{
-            margin: 0 !important;
+            margin: 0 ;
             position: relative;
         
           }
@@ -284,7 +282,7 @@
         background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
             background-color: red;
             position: absolute ;
-            margin: 0 !important;
+            margin: 0;
             bottom:170px;
            
     }
@@ -307,15 +305,15 @@
 
     .rock-circle-pro{
         position: absolute ;
-        margin: 0 !important;
-        bottom:150px;
+        margin: 0;
+        bottom:170px;
         right: 20px;
     }
     .scissors-circle-pro{
         background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
         position: absolute;
         top: 50px;
-        left: -30px;
+        left: -29px;
         background-color: yellow;
     }
     
@@ -370,9 +368,82 @@
          }
     }
 
+    .user-result{       
+        min-width: 200px;
+        div{
+            bottom: 0 !important;
+        }
+        .over-img-title{
+           order: 2;
+           margin-top: 20px !important;
+           font-size: 12pt !important;
+           letter-spacing: 3px;
+        }
 
-    .rock-circle{
-        bottom: 0px;
+        .circle-wrap-simple{
+            order: 1;
+            height: 100px;
+            width: 100px;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            div{
+                height: 50px;
+                width: 50px;
+            }
+            
+        }   
+        
+    }   
+    .bot-result{
+        min-width: 200px;
+        div{
+            bottom: 0 !important;
+        }
+        .over-img-title{
+           order: 2;
+           margin-top: 20px;
+           font-size: 12pt;
+        }
+
+        .circle-wrap-simple{
+            order: 1; 
+            height: 100px;
+            width: 100px;
+            div{
+                
+                position: relative ;
+                height: 50px;
+                width: 50px;
+            }
+            
+        }   
+        
+    }   
+    .result{
+        display: flex ;
+        justify-content: center;
+        
+
+
+    }
+    .result-text{
+        position: absolute;
+        bottom: 20px;
+    }
+    .empty-circle{
+        width:100px;
+        height: 100px;
+    }
+
+    .message{
+        font-size: 50pt !important;
+        margin-bottom: 10px !important;
+    }
+
+    .play-again{
+        min-width: 200px;
     }
     
 }

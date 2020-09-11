@@ -123,7 +123,7 @@ const GameSection = ({ proMode, handleWin }) => {
                 <React.Fragment>
                     <div className="result">
                         <div className="user-result">
-                            <p>You picked</p>
+                            <p className="over-img-title">You picked</p>
                             <div className={userMove.circleClass} >
                                 <div className="circle">
                                     <img src={userMove.comp} alt="move" />
@@ -137,7 +137,7 @@ const GameSection = ({ proMode, handleWin }) => {
                         </div>
 
                         <div className="bot-result">
-                            <p>The house picked</p>
+                            <p className="over-img-title">The house picked</p>
                             <div className={circleAnimationClass} >
                                 <div className="circle">
                                     <img src={botMove.comp} alt="move" />

@@ -7,7 +7,7 @@ import lizard from '../images/icon-lizard.svg';
 import spock from '../images/icon-spock.svg';
 import triangle from '../images/bg-triangle.svg';
 import pentagon from '../images/bg-pentagon.svg';
-import _, { set } from 'lodash';
+import _ from 'lodash';
 
 const GameSection = ({ proMode, handleWin }) => {
 
@@ -29,7 +29,10 @@ const GameSection = ({ proMode, handleWin }) => {
     const [userMove, setUserMove] = useState({})
     const [botMove, setBotMove] = useState({})
     const [message, setMessage] = useState('')
+    const [circleAnimationClass, setCircleAnimationClass] = useState('empty-circle')
+
     const handleMove = (move) => {
+        reset();
         setIsGameStarted(true);
         setMessage('');
         let myMove = move;
@@ -38,21 +41,25 @@ const GameSection = ({ proMode, handleWin }) => {
             let userObj = _.find(SimpleMoves, (move) => { return move.id === myMove });
             let botObj = _.find(SimpleMoves, (move) => { return move.id === randomBotPick });
 
-            setUserMove(userObj)
-            setBotMove(botObj)
-
-            calcResult(userObj, botObj);
-
+            setUserMove(userObj);
+            setTimeout(() => {
+                setBotMove(botObj);
+                setCircleAnimationClass(botObj.circleClass)
+                calcResult(userObj, botObj);
+            }, 1700);
         }
+    }
+    const reset = () => {
+        setCircleAnimationClass('empty-circle');
+        setUserMove({});
+        setBotMove({});
     }
 
     const calcResult = (userObj, botObj) => {
 
         let userMoveId = Object.values(userObj)[0];
         let botMoveId = Object.values(botObj)[0];
-
         let caseToTest = userMoveId.toString() + " " + botMoveId.toString();
-
         if (userMoveId === botMoveId) {
             setMessage('Its a tie')
         }
@@ -70,9 +77,6 @@ const GameSection = ({ proMode, handleWin }) => {
                     break;
 
             }
-
-
-
 
     }
 
@@ -118,21 +122,27 @@ const GameSection = ({ proMode, handleWin }) => {
             {isGameStarted &&
                 <React.Fragment>
                     <div className="result">
-                        <div className={userMove.circleClass} >
-                            <div className="circle">
-                                <img src={userMove.comp} alt="move" />
+                        <div className="user-result">
+                            <p>You picked</p>
+                            <div className={userMove.circleClass} >
+                                <div className="circle">
+                                    <img src={userMove.comp} alt="move" />
+                                </div>
                             </div>
                         </div>
+
                         <div className="result-text">
                             <p className="message">{message}</p>
                             <button className="play-again" onClick={() => setIsGameStarted(false)}>Play again</button>
                         </div>
-                        <div className={botMove.circleClass} >
-                            <div className="circle">
 
-                                <img src={botMove.comp} alt="move" />
+                        <div className="bot-result">
+                            <p>The house picked</p>
+                            <div className={circleAnimationClass} >
+                                <div className="circle">
+                                    <img src={botMove.comp} alt="move" />
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </React.Fragment>

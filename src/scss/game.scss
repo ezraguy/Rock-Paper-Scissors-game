@@ -25,7 +25,6 @@
     margin-right: 50px;
 }
 
-
 .rock-circle{
     background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
         background-color: red;
@@ -152,29 +151,95 @@
     
 }
 
-.result{
-   
+.empty-circle{
+    background-color: rgba(128, 128, 128, 0.317);
+    z-index: 3;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
     display: flex;
-    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    animation: pulseCircle 1s infinite ;
+   animation-timing-function: ease-in-out;
+
+        img{
+            display: none;
+        }
+}
+
+@mixin keyframes ($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @keyframes #{$animation_name} {
+        @content;
+    }
+  }
+
+  @keyframes pulseCircle{
+      0%{transform: scale(1)};
+      50%{transform: scale(1.1);}
+      100%{transform: scale(1)};
+  }
+
+ 
+
+.result{
+   transition: ease 2s ;
+    display: flex;
     align-items: center;
     position: relative;
     height: 500px;
-    width: 600px;
+   width: 600px;
     justify-content: space-between;
+
+
+    .user-result{
+       margin: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
+        p{
+            font-size: 20pt;
+            text-transform: uppercase;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+    }
+
+    .bot-result{
+        @extend .user-result;
+    }
 
     .result-text{
         font-size: 40pt;
-        margin: 0 !important;
+       margin-left: 20px;
         display: flex;
         flex-direction: column;
 
         .message{
-            font-size: 40pt;
+            text-align: center;
+            font-size: 30pt;
+            margin-left: 20px;
+            margin-right: 20px;
             margin: 0;
         }
+        
         .play-again{
+            cursor: pointer;
             background-color: white;
-            
             font-family: inherit;
             font-size: 14pt;
             height: 40px;
@@ -202,15 +267,79 @@
     
 }
 
+
+
 @media screen and (max-width: 600px) {
+
+    .paper-circle{
+        background-image: #fff;
+        background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
+        background-color: blue;
+        position: absolute;
+        top: 20px;
+        right: 5px;
+    }
+    
+    .rock-circle{
+        background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
+            background-color: red;
+            position: absolute ;
+            margin: 0 !important;
+            bottom:170px;
+           
+    }
+    
+    .scissors-circle{
+        background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
+        background-color: yellow;
+        position: absolute;
+        top: 20px;
+        left: 40px;
+        background-color: yellow;
+    }
+
+
+    .paper-circle-pro{
+        position: absolute;
+        top: 120px;
+        right:80px;
+    }
+
+    .rock-circle-pro{
+        position: absolute ;
+        margin: 0 !important;
+        bottom:150px;
+        right: 20px;
+    }
+    .scissors-circle-pro{
+        background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
+        position: absolute;
+        top: 50px;
+        left: -30px;
+        background-color: yellow;
+    }
+    
+    .lizard-circle-pro{
+        background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
+        background-color: purple;
+        position: absolute;
+        top: 120px;
+        left:  70px;
+    }
+    
+    .spock-circle-pro{
+            background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
+            background-color: turquoise;
+            position: absolute ;
+            top:250px;
+            left: 40px !important;
+    }
+
 
 
     
     .game{
-       
-        
        width: 100%;
-        
          .circle-wrap-pro{
             width: 100px !important;
             height: 100px !important;
@@ -219,97 +348,31 @@
                 width: 50px !important;
                 height: 50px !important;
             }
-            &:nth-of-type(1){
-                background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
-                background-color: blue;
-                position: absolute;
-                top: 130px;
-                right:90px;
-                 
-    
-            }
-            &:nth-of-type(2){
-                background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
-                background-color: red;
-                position: absolute ;
-                margin: 0 !important;
-                bottom:150px;
-                right: 30px;
-                
-    
-            }
-            &:nth-of-type(3){
-                background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
-                position: absolute;
-                top: 30px;
-                right: -27px;
-                background-color: yellow;
-    
-            }
-            &:nth-of-type(4){
-                background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
-                background-color: purple;
-                position: absolute;
-                top: 130px;
-                left:  80px;
-    
-            }
-            &:nth-of-type(5){
-                background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
-                background-color: turquoise;
-                position: absolute;
-                bottom:170px;
-                left: 50px;
-    
-            }
-
-          
         }
 
         .circle-wrap-simple{
             border-radius: 50%;
             width: 100px;
             height: 100px;
-            
-
+        
             .circle{
                 width: 50px;
                 height: 50px;
+                margin: 0 !important;
             }
 
-
-            &:nth-of-type(1){
-                background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
-                background-color: blue;
-                margin-right: 100px;
-                margin-top:20px;
-                
-    
-            }
-            &:nth-of-type(2){
-                background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
-                background-color: red;
-                position: absolute;
-                margin-top: 210px;
-                
-    
-            }
-            &:nth-of-type(3){
-                background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
-                background-color: yellow;
-                margin-top: 20px;
-            }
-
-
-            
         }
         .background-shape{
-            
              position: absolute;
              align-self: auto;
              z-index: 0;
              width: 250px;
          }
     }
+
+
+    .rock-circle{
+        bottom: 0px;
+    }
     
-  }
+}

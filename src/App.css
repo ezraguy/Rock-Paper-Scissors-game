@@ -16,7 +16,7 @@ html,body{
     font-size: 11px;
     text-align: center;
     color: whitesmoke;
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     width: 200px;
     margin-right: auto;

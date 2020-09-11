@@ -198,34 +198,37 @@
     transition: ease 2s ;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     height: 500px;
     width: 600px;
-    justify-content: space-between;
+   
 
 
     .user-result{
-       margin: 0 ;
+        margin-right : 20px;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
         
-        p{
+        .over-img-title{
             font-size: 20pt;
             text-transform: uppercase;
             margin: 0;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
     }
 
     .bot-result{
         @extend .user-result;
+        margin-left: 20px;
+        margin-right: 0px;
     }
 
     .result-text{
         font-size: 40pt;
-       margin-left: 20px;
+        margin-left: 20px;
         display: flex;
         flex-direction: column;
 
@@ -240,10 +243,13 @@
             background-color: white;
             font-family: inherit;
             font-size: 14pt;
-            height: 40px;
+            height: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            
             border: none;
             border-radius: 7px;
-            color: #1A2849 ;
+            color: #3d5ca4 ;
         }
     }
 
@@ -258,7 +264,6 @@
         .circle{
             margin: 0 ;
             position: relative;
-        
           }
     }
   
@@ -370,6 +375,7 @@
 
     .user-result{       
         min-width: 200px;
+        margin:0px !important;
         div{
             bottom: 0 !important;
         }
@@ -382,21 +388,22 @@
 
         .circle-wrap-simple{
             order: 1;
-            height: 100px;
-            width: 100px;
+            height: 150px;
+            width: 150px;
             top: 0;
             right: 0;
             left: 0;
             bottom: 0;
             div{
-                height: 50px;
-                width: 50px;
+                height: 80px;
+                width: 80px;
             }
             
         }   
         
     }   
     .bot-result{
+
         min-width: 200px;
         div{
             bottom: 0 !important;
@@ -409,13 +416,13 @@
 
         .circle-wrap-simple{
             order: 1; 
-            height: 100px;
-            width: 100px;
+            height: 150px;
+            width: 150px;
             div{
                 
                 position: relative ;
-                height: 50px;
-                width: 50px;
+                height: 80px;
+                width: 80px;
             }
             
         }   
@@ -423,27 +430,34 @@
     }   
     .result{
         display: flex ;
+        position: relative;
         justify-content: center;
-        
-
+        align-items: flex-start;
+        margin-top: 50px;
 
     }
     .result-text{
         position: absolute;
-        bottom: 20px;
+        align-self: flex-end;
+        bottom: 100px;
+        margin-left: 0px !important;
+        max-width: 300px;
+        
     }
     .empty-circle{
-        width:100px;
-        height: 100px;
+        width:150px;
+        height: 150px;
     }
 
     .message{
-        font-size: 50pt !important;
+        font-size: 40pt !important;
         margin-bottom: 10px !important;
     }
 
     .play-again{
         min-width: 200px;
+        height: 50px !important;
+        
     }
     
 }

@@ -15,142 +15,193 @@
     }
 
     
-    .circle-wrap-simple{
-        
-        z-index: 3;
-        &:nth-of-type(1){
-            background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
-            background-color: blue;
-            margin-right: 60px;
-            
-
-        }
-        &:nth-of-type(2){
-            background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
-            background-color: red;
-            position: absolute;
-            margin-top: 200px;
-            
-
-        }
-        &:nth-of-type(3){
-            background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
-            background-color: yellow;
-
-        }
-        
-        cursor: pointer;
-        width: 170px;
-        height: 170px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: .3s ease;
-        &:hover{
-            transform: translateY(-7px);
-        }
-
-        .circle{
-            background-color: #fff;
-            position: relative;
-            z-index: 10;
-           cursor: pointer;
-            margin: 0;
-            border: 15px solid ;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            position: relative;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            
-        }
-        
-        
-    }
-
-    .circle-wrap-pro{
-        margin: -20px;
-        
-        z-index: 3;
-        &:nth-of-type(1){
-            background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
-            background-color: blue;
-            position: absolute;
-            top: 100px;
-            right:50px;
-             
-
-        }
-        &:nth-of-type(2){
-            background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
-            background-color: red;
-            position: absolute ;
-            margin: 0 !important;
-            bottom:50px;
-            right: 90px;
-            
-
-        }
-        &:nth-of-type(3){
-            background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
-            position: absolute;
-            top: 0px;
-            background-color: yellow;
-
-        }
-        &:nth-of-type(4){
-            background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
-            background-color: purple;
-            position: absolute;
-            top: 100px;
-            left:  50px;
-
-        }
-        &:nth-of-type(5){
-            background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
-            background-color: turquoise;
-            position: absolute;
-            bottom:70px;
-            left: 100px;
-
-        }
-        
-        cursor: pointer;
-        width: 170px;
-        height: 170px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: .3s ease;
-        &:hover{
-            transform: translateY(-7px);
-        }
-        .circle{
-            background-color: #fff;
-            position: relative;
-            z-index: 10;
-           cursor: pointer;
-            margin: 0;
-            border: 15px solid;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            position: relative;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        
-    }
+ 
    
+}
+.circle-wrap-simple{
+        
+    z-index: 3;
+    &:nth-of-type(1){
+        background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
+        background-color: blue;
+        margin-right: 60px;
+        
+
+    }
+    &:nth-of-type(2){
+        background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
+        background-color: red;
+        position: absolute;
+        margin-top: 200px;
+        
+
+    }
+    &:nth-of-type(3){
+        background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
+        background-color: yellow;
+
+    }
+    
+    cursor: pointer;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+
+    .circle{
+        background-color: #fff;
+        position: relative;
+        z-index: 10;
+       cursor: pointer;
+        margin: 0;
+        border: 15px solid ;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+    }
+    
+    
+}
+
+.circle-wrap-pro{
+    margin: -20px;
+    
+    z-index: 3;
+    &:nth-of-type(1){
+        background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
+        background-color: blue;
+        position: absolute;
+        top: 100px;
+        right:50px;
+         
+
+    }
+    &:nth-of-type(2){
+        background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
+        background-color: red;
+        position: absolute ;
+        margin: 0 !important;
+        bottom:50px;
+        right: 90px;
+        
+
+    }
+    &:nth-of-type(3){
+        background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
+        position: absolute;
+        top: 0px;
+        background-color: yellow;
+
+    }
+    &:nth-of-type(4){
+        background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
+        background-color: purple;
+        position: absolute;
+        top: 100px;
+        left:  50px;
+
+    }
+    &:nth-of-type(5){
+        background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
+        background-color: turquoise;
+        position: absolute;
+        bottom:70px;
+        left: 100px;
+
+    }
+    
+    cursor: pointer;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+    .circle{
+        background-color: #fff;
+        position: relative;
+        z-index: 10;
+       cursor: pointer;
+        margin: 0;
+        border: 15px solid;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+}
+
+.result{
+   
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    position: relative;
+    height: 500px;
+    width: 600px;
+    justify-content: space-between;
+
+    .result-text{
+        font-size: 40pt;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+
+        .message{
+            font-size: 40pt;
+            margin: 0;
+        }
+        .play-again{
+            background-color: white;
+            
+            font-family: inherit;
+            font-size: 14pt;
+            height: 40px;
+            border: none;
+            border-radius: 7px;
+            color: #1A2849 ;
+        }
+    }
+
+    .circle-wrap-simple{
+        @extend .circle-wrap-simple;
+        display: flex;
+        position: relative !important;
+        margin:0!important;
+        
+        
+
+        .circle{
+            margin: 0 !important;
+            position: relative;
+        
+          }
+    }
+  
+    
 }
 
 @media screen and (max-width: 600px) {

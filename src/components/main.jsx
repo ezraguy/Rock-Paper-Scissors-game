@@ -6,13 +6,18 @@ import GameSection from './game-section';
 const Main = () => {
     const [showRules, setShowRules] = useState(false);
     const [proMode, setProMode] = useState(false);
-
+    const [wins, setWins] = useState(0)
     const showModal = () => {
         setShowRules(!showRules)
     }
     const handleProMode = () => {
         setProMode(!proMode);
     }
+
+    const handleWin = () => {
+        setWins(wins + 1)
+    }
+
     return (
 
         <div className="main">
@@ -41,19 +46,19 @@ const Main = () => {
                 </div>
                 <div className="score">
                     <span>Score</span>
-                    <span className="score-number">12</span>
+                    <span className="score-number">{wins}</span>
                 </div>
             </div>
             <div className="game-section">
-                <GameSection proMode={proMode} />
+                <GameSection proMode={proMode} handleWin={handleWin} />
             </div>
             <button className="rules-button" onClick={showModal}>rules</button>
-            {/* rules */}
+
             {showRules &&
                 <React.Fragment>
                     <div className="overlay"></div>
                     <div className="rules">
-                        <Rules showModal={showModal} />
+                        <Rules showModal={showModal} proMode={proMode} />
                     </div>
                 </React.Fragment>
             }

@@ -1,8 +1,9 @@
 import React from 'react'
-import rulesImg from '../images/image-rules.svg';
+import simpleRulesImg from '../images/image-rules.svg';
+import proRulesImg from '../images/image-rules-bonus.svg';
 import '../scss/rules.scss';
 import { ReactComponent as XSvg } from '../images/x.svg';
-const Rules = ({ showModal }) => {
+const Rules = ({ showModal, proMode }) => {
 
     return (
         <div className="rules-modal">
@@ -12,8 +13,10 @@ const Rules = ({ showModal }) => {
                     <XSvg onClick={showModal} />
                 </button>
             </div>
-
-            <img src={rulesImg} className="rules-image" alt="rules" />
+            {proMode &&
+                <img src={proRulesImg} className="rules-image" alt="rules" />
+            }
+            {!proMode && <img src={simpleRulesImg} className="rules-image" alt="rules" />}
         </div>);
 }
 

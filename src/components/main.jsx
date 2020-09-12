@@ -21,9 +21,10 @@ const Main = () => {
     return (
 
         <div className="main">
-            <button className="set-pro-mode" onClick={handleProMode}>pro</button>
+
 
             <div className="score-board">
+                <button className="set-pro-mode" onClick={handleProMode}>Switch mode</button>
                 <div className="title">
                     {proMode ?
                         <React.Fragment>

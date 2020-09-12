@@ -12,7 +12,7 @@
     
     .set-pro-mode{
        position: absolute;
-       
+       cursor: pointer;
        bottom: 5px;
        right: 10px;
        margin-right: auto;
@@ -36,11 +36,11 @@
         background-color: transparent;
         border: 1px rgb(184, 183, 183) solid;
         border-radius: 10px;
-        width: calc(45% - 100px);
+        width: calc(40% - 100px);
         min-width: 300px;
         margin-right: 30px;
         margin-left: 30px;
-        min-height: 120px;
+        min-height: 130px;
         margin-top: 20px;
         
        .title{

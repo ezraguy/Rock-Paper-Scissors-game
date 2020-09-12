@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     position: relative;
-    height: 500px;
     width: 600px;
     margin-top: 40px;
 
@@ -46,7 +45,7 @@
     @extend .rock-circle;
     position: absolute ;
     margin: 0;
-    bottom:100px;
+    top:260px;
     right: 100px;
 }
 .scissors-circle-pro{
@@ -70,7 +69,7 @@
         background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
         background-color: turquoise;
         position: absolute;
-        bottom:100px;
+        top:260px;
         left: 100px;
 
     
@@ -198,6 +197,7 @@
     position: relative;
     
     min-height: 380px;
+    max-height: 400px;
    
    
 
@@ -303,7 +303,7 @@
             background-color: red;
             position: absolute ;
             margin: 0;
-            bottom:200px;
+            top:200px;
            
     }
     
@@ -326,7 +326,7 @@
     .rock-circle-pro{
         position: absolute ;
         margin: 0;
-        bottom:180px;
+        top:220px;
         right: 20px;
     }
     .scissors-circle-pro{
@@ -353,10 +353,12 @@
             left: 40px !important;
     }
 
-
+ 
 
     
     .game{
+       
+        height: 300px !important;
        width: 100%;
          .circle-wrap-pro{
             width: 100px !important;

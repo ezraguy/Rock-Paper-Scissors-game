@@ -48,8 +48,8 @@
     @extend .rock-circle;
     position: absolute ;
     margin: 0;
-    bottom:50px;
-    right: 90px;
+    bottom:70px;
+    right: 100px;
 }
 .scissors-circle-pro{
     @extend .scissors-circle;
@@ -68,14 +68,14 @@
 }
 
 .spock-circle-pro{
-    &:nth-of-type(5){
+   
         background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
         background-color: turquoise;
         position: absolute;
         bottom:70px;
         left: 100px;
 
-    }
+    
 }
 
 
@@ -209,17 +209,22 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
-        
+        position: relative;
         .over-img-title{
             font-size: 20pt;
             text-transform: uppercase;
             margin: 0;
             margin-bottom: 10px;
         }
+        :nth-child(2){
+            top: 0 !important;
+            left: 0 !important;
+        }
     }
 
     .bot-result{
         @extend .user-result;
+        position: relative;
         margin-left: 20px;
         margin-right: 0px;
     }
@@ -258,9 +263,20 @@
         margin:0;
         
         
-
         .circle{
             margin: 0 ;
+            top: 0 ;
+            position: relative;
+          }
+    }
+    .circle-wrap-pro{
+        
+        display: flex;
+        position: relative !important ;
+        margin:0;
+        
+        .circle{
+            margin: 0  !important;
             position: relative;
           }
     }

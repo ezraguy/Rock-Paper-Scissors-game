@@ -35,19 +35,29 @@ const GameSection = ({ proMode, handleWin }) => {
         reset();
         setIsGameStarted(true);
         setMessage('');
+        let randomBotPick = 0;
         let myMove = move;
+        let userObj = {};
+        let botObj
         if (!proMode) {
-            let randomBotPick = Math.floor(Math.random() * 3) + 1;
-            let userObj = _.find(SimpleMoves, (move) => { return move.id === myMove });
-            let botObj = _.find(SimpleMoves, (move) => { return move.id === randomBotPick });
-
-            setUserMove(userObj);
-            setTimeout(() => {
-                setBotMove(botObj);
-                setCircleAnimationClass(botObj.circleClass)
-                calcResult(userObj, botObj);
-            }, 1700);
+            randomBotPick = Math.floor(Math.random() * 3) + 1;
+            userObj = _.find(SimpleMoves, (move) => { return move.id === myMove });
+            botObj = _.find(SimpleMoves, (move) => { return move.id === randomBotPick });
         }
+
+        else {
+            randomBotPick = Math.floor(Math.random() * 5) + 1;
+            userObj = _.find(proMoves, (move) => { return move.id === myMove });
+            botObj = _.find(proMoves, (move) => { return move.id === randomBotPick });
+        }
+
+
+        setUserMove(userObj);
+        setTimeout(() => {
+            setBotMove(botObj);
+            setCircleAnimationClass(botObj.circleClass)
+            calcResult(userObj, botObj);
+        }, 1700);
     }
     const reset = () => {
         setCircleAnimationClass('empty-circle');
@@ -64,20 +74,43 @@ const GameSection = ({ proMode, handleWin }) => {
             setMessage('Its a tie')
         }
         else
-            switch (caseToTest) {
-                case "1 2":
-                case "2 3":
-                case "3 1":
-                    setMessage('You Win!');
-                    handleWin();
-                    break;
+            if (!proMode) {
+                switch (caseToTest) {
+                    case "1 2":
+                    case "2 3":
+                    case "3 1":
+                        setMessage('You Win!');
+                        handleWin();
+                        break;
 
-                default:
-                    setMessage('You Lose!');
-                    break;
+                    default:
+                        setMessage('You Lose!');
+                        break;
 
+                }
             }
 
+            else {
+                switch (caseToTest) {
+                    case "1 2":
+                    case "2 3":
+                    case "3 1":
+                    case "2 4":
+                    case "4 5":
+                    case "5 3":
+                    case "3 4":
+                    case "4 1":
+                    case "1 5":
+                    case "5 2":
+                        setMessage('You Win!');
+                        handleWin();
+                        break;
+                    default:
+                        setMessage('You Lose!');
+                        break;
+
+                }
+            }
     }
 
 

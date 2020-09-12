@@ -1,35 +1,33 @@
+
+
 .game{
-    
     display: flex;
-    margin-top: 50px;
     justify-content: center;
     position: relative;
     height: 500px;
     width: 600px;
-    
+    margin-top: 40px;
 
     .background-shape{
-        margin-top: 60px;
         position: absolute;
+        margin-top: 30px;
         z-index: 0;
     }
 
-    
- 
-   
 }
 .paper-circle{
     background-image: #fff;
     background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
     background-color: blue;
-    margin-right: 50px;
+
+    margin-right: 20px;
 }
 
 .rock-circle{
     background-image: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%) ) ;
         background-color: red;
         position: absolute;
-        margin-top: 200px;
+        margin-top: 190px;
 }
 
 .scissors-circle{
@@ -41,21 +39,21 @@
 .paper-circle-pro{
     @extend .paper-circle;
     position: absolute ;
-         top: 100px;
+         top:80px;
          right:50px;
 }
 .rock-circle-pro{
     @extend .rock-circle;
     position: absolute ;
     margin: 0;
-    bottom:70px;
+    bottom:100px;
     right: 100px;
 }
 .scissors-circle-pro{
     @extend .scissors-circle;
     background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
     position: absolute;
-    top: 0px;
+    top: -10px;
     background-color: yellow;
 }
 
@@ -63,7 +61,7 @@
     background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
     background-color: purple;
     position: absolute;
-    top: 100px;
+    top: 80px;
     left:  50px;
 }
 
@@ -72,7 +70,7 @@
         background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
         background-color: turquoise;
         position: absolute;
-        bottom:70px;
+        bottom:100px;
         left: 100px;
 
     
@@ -198,8 +196,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    min-height: 400px;
-    width: 600px;
+    min-height: 370px;
+   
    
 
 
@@ -293,8 +291,8 @@
         background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
         background-color: blue;
         position: absolute;
-        top: 20px;
-        right: 5px;
+        top: 10px;
+        right: 25px;
     }
     
     .rock-circle{
@@ -302,7 +300,7 @@
             background-color: red;
             position: absolute ;
             margin: 0;
-            bottom:170px;
+            bottom:200px;
            
     }
     
@@ -310,7 +308,7 @@
         background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
         background-color: yellow;
         position: absolute;
-        top: 20px;
+        top: 10px;
         left: 40px;
         background-color: yellow;
     }
@@ -318,20 +316,20 @@
 
     .paper-circle-pro{
         position: absolute;
-        top: 120px;
+        top: 110px;
         right:80px;
     }
 
     .rock-circle-pro{
         position: absolute ;
         margin: 0;
-        bottom:170px;
+        bottom:180px;
         right: 20px;
     }
     .scissors-circle-pro{
         background-image: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%) ) ;
         position: absolute;
-        top: 50px;
+        top: 20px;
         left: -29px;
         background-color: yellow;
     }
@@ -340,7 +338,7 @@
         background-image: linear-gradient( hsl(261, 73%, 60%) , hsl(261, 72%, 63%) );
         background-color: purple;
         position: absolute;
-        top: 120px;
+        top: 110px;
         left:  70px;
     }
     
@@ -348,7 +346,7 @@
             background-image: linear-gradient( hsl(189, 59%, 53%) , hsl(189, 58%, 57%) ) ;
             background-color: turquoise;
             position: absolute ;
-            top:250px;
+            top:240px;
             left: 40px !important;
     }
 
@@ -448,6 +446,8 @@
         justify-content: center;
         align-items: flex-start;
         margin-top: 10px;
+        
+        
 
     }
     .result-text{
@@ -473,5 +473,7 @@
         height: 50px !important;
         
     }
+    
+
     
 }

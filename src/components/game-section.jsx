@@ -119,7 +119,8 @@ const GameSection = ({ proMode, handleWin }) => {
         <React.Fragment>
 
             {
-                !isGameStarted && <div className="game">
+                !isGameStarted &&
+                <div className="game">
                     <img className="background-shape" src={proMode ? pentagon : triangle} alt="triangle" />
                     {!proMode && SimpleMoves.map((move) => {
                         return (

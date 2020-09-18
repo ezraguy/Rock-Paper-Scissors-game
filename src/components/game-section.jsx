@@ -76,7 +76,6 @@ const GameSection = ({ proMode, handleWin }) => {
 
         let userMoveId = Object.values(userObj)[0];
         let botMoveId = Object.values(botObj)[0];
-        console.log(userMoveId, botMoveId);
         let caseToTest = userMoveId.toString() + " " + botMoveId.toString();
         if (userMoveId === botMoveId) {
             setMessage('Its a tie')

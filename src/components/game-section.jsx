@@ -33,7 +33,7 @@ const GameSection = ({ proMode, handleWin }) => {
     const [isLoading, setIsLoading] = useState(false)
 
     const handleMove = (move) => {
-
+        reset();
         setIsGameStarted(true);
         setMessage('');
         setIsLoading(true)
@@ -56,8 +56,8 @@ const GameSection = ({ proMode, handleWin }) => {
 
 
         setUserMove(userObj);
-
         setBotMove(botObj);
+
         setTimeout(() => {
             setIsLoading(false)
             calcResult(userObj, botObj);
@@ -114,11 +114,11 @@ const GameSection = ({ proMode, handleWin }) => {
                     case "5 2":
                         setMessage('You Win!');
                         handleWin();
-                        addWinnerClass('user');
+                        addWinnerClass('user', userObj, botObj);
                         break;
                     default:
                         setMessage('You Lose!');
-                        addWinnerClass('bot');
+                        addWinnerClass('bot', userObj, botObj);
                         break;
 
                 }

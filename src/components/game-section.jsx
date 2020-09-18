@@ -9,6 +9,7 @@ import triangle from '../images/bg-triangle.svg';
 import pentagon from '../images/bg-pentagon.svg';
 import _ from 'lodash';
 
+
 const GameSection = ({ proMode, handleWin }) => {
 
     const [SimpleMoves] = useState([
@@ -29,16 +30,17 @@ const GameSection = ({ proMode, handleWin }) => {
     const [userMove, setUserMove] = useState({})
     const [botMove, setBotMove] = useState({})
     const [message, setMessage] = useState('')
-    const [circleAnimationClass, setCircleAnimationClass] = useState('empty-circle')
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleMove = (move) => {
-        reset();
+
         setIsGameStarted(true);
         setMessage('');
+        setIsLoading(true)
         let randomBotPick = 0;
         let myMove = move;
         let userObj = {};
-        let botObj
+        let botObj = {};
         if (!proMode) {
             randomBotPick = Math.floor(Math.random() * 3) + 1;
             userObj = _.find(SimpleMoves, (move) => { return move.id === myMove });
@@ -52,23 +54,29 @@ const GameSection = ({ proMode, handleWin }) => {
         }
 
 
+
         setUserMove(userObj);
+
+        setBotMove(botObj);
         setTimeout(() => {
-            setBotMove(botObj);
-            setCircleAnimationClass(botObj.circleClass)
+            setIsLoading(false)
             calcResult(userObj, botObj);
         }, 1700);
     }
+
     const reset = () => {
-        setCircleAnimationClass('empty-circle');
+        setIsLoading(false);
         setUserMove({});
         setBotMove({});
     }
+
+
 
     const calcResult = (userObj, botObj) => {
 
         let userMoveId = Object.values(userObj)[0];
         let botMoveId = Object.values(botObj)[0];
+        console.log(userMoveId, botMoveId);
         let caseToTest = userMoveId.toString() + " " + botMoveId.toString();
         if (userMoveId === botMoveId) {
             setMessage('Its a tie')
@@ -81,10 +89,12 @@ const GameSection = ({ proMode, handleWin }) => {
                     case "3 1":
                         setMessage('You Win!');
                         handleWin();
+                        addWinnerClass('user', userObj, botObj);
                         break;
 
                     default:
                         setMessage('You Lose!');
+                        addWinnerClass('bot', userObj, botObj);
                         break;
 
                 }
@@ -104,15 +114,29 @@ const GameSection = ({ proMode, handleWin }) => {
                     case "5 2":
                         setMessage('You Win!');
                         handleWin();
+                        addWinnerClass('user');
                         break;
                     default:
                         setMessage('You Lose!');
+                        addWinnerClass('bot');
                         break;
 
                 }
             }
     }
 
+    const addWinnerClass = (addTo, userObj, botObj) => {
+        if (addTo === 'user') {
+            let objCopy = JSON.parse(JSON.stringify(userObj))
+            objCopy.circleClass += ' winner-circle'
+            setUserMove(objCopy)
+        } else {
+            let objCopy = JSON.parse(JSON.stringify(botObj))
+            objCopy.circleClass += ' winner-circle'
+            setBotMove(objCopy)
+        }
+
+    }
 
     return (
 
@@ -172,7 +196,7 @@ const GameSection = ({ proMode, handleWin }) => {
 
                         <div className="bot-result">
                             <p className="over-img-title">The house picked</p>
-                            <div className={circleAnimationClass} >
+                            <div className={isLoading ? 'empty-circle' : botMove.circleClass} >
                                 <div className="circle">
                                     <img src={botMove.comp} alt="move" />
                                 </div>

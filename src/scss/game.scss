@@ -14,11 +14,35 @@
     }
 
 }
+
+
+.winner-circle{
+    animation: ripple infinite linear 1s ;
+    animation-timing-function: ease;
+
+}
+// winner animation
+    @keyframes ripple {
+        0% {
+          box-shadow: 0 0 0 0rem rgba(white, 0.2),
+                      0 0 0 1rem rgba(white, 0.2),
+                      0 0 0 3rem rgba(white, 0.2),
+                      0 0 0 5rem rgba(white, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 1rem rgba(white, 0.2),
+                      0 0 0 3rem rgba(white, 0.2),
+                      0 0 0 6rem rgba(white, 0.2),
+                      0 0 0 7rem rgba(white, 0);
+        }
+      }
+
+
+
 .paper-circle{
     background-image: #fff;
     background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
     background-color: blue;
-
     margin-right: 20px;
 }
 
@@ -287,6 +311,22 @@
 
 @media screen and (max-width: 600px) {
 
+
+    @keyframes ripple {
+        0% {
+          box-shadow: 0 0 0 0rem rgba(white, 0.2),
+                      0 0 0 1rem rgba(white, 0.2),
+                      0 0 0 2rem rgba(white, 0.2),
+                      0 0 0 3rem rgba(white, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 1rem rgba(white, 0.2),
+                      0 0 0 2rem rgba(white, 0.2),
+                      0 0 0 3rem rgba(white, 0.2),
+                      0 0 0 4rem rgba(white, 0);
+        }
+      }
+
     .paper-circle{
         background-image: #fff;
         background-image: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
@@ -478,7 +518,7 @@
         align-items: flex-start;
         justify-content: space-evenly;
         min-width: 350px !important;
-        margin-top: 10px;
+        margin-top: 40px;
         
         
 
